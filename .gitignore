@@ -16,3 +16,5 @@ outputs/
 data/
 **/index_registry.json
 .ipynb_checkpoints/
+
+!.env.example
