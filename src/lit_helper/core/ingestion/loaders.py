@@ -28,12 +28,12 @@ def discover_documents(
             docs.append(p)
     return sorted(docs)
     
-    def load_pdf(path: str | Path):
-        p = Path(path)
-        if not p.exists():
-            raise FileNotFoundError(f"PDF file not found in: {p}")
-        return SimpleDirectoryReader(input_files=[str(p)]).load_data()
-      # type: ignore
+def load_pdf(path: str | Path):
+    p = Path(path)
+    if not p.exists():
+        raise FileNotFoundError(f"PDF file not found in: {p}")
+    return SimpleDirectoryReader(input_files=[str(p)]).load_data()
+    # type: ignore
 
     reader = SimpleDirectoryReader(document_dir, recursive=True, required_exts=extensions)
     return reader.load_data()  # type: ignore
